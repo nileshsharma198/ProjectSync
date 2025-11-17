@@ -118,6 +118,7 @@ const syncWorkspaceDeletion = inngest.createFunction(
   }
 );
 
+
 // Inngest function to save workspace member data to database
 const syncWorkspaceMemberCreation = inngest.createFunction(
   { id: "sync-workspace-member-from-clerk" },
@@ -127,13 +128,14 @@ const syncWorkspaceMemberCreation = inngest.createFunction(
 
     await prisma.workspaceMember.create({
       data: {
-        userId: data.public_user_data.user_id,
-        workspaceId: data.organization.id,
-        role: data.role.toUpperCase(),  // ADMIN / MEMBER
+        userId: data.user_id,                           // ✔ Correct user ID field
+        workspaceId: data.organization.id,              // ✔ Correct workspace ID
+        role: data.role === "org:admin" ? "ADMIN" : "MEMBER", // ✔ Convert Clerk role → Prisma enum
       },
     });
   }
 );
+
 
 
 //Inngest function to Send Email on task creation

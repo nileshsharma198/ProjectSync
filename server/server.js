@@ -21,7 +21,7 @@ app.use("/api/inngest", serve({ client: inngest, functions }));   // Assuming in
 
 //Our other Routes
 app.use("/api/workspaces", protect, workspaceRouter)
-app.use("/api/project", protect, projectRouter)
+app.use("/api/projects", protect, projectRouter)
 app.use("/api/tasks", protect, taskRouter )
 app.use("/api/comments", protect, commentRouter )
 

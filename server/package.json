@@ -25,6 +25,7 @@
     "ws": "^8.18.3"
   },
   "devDependencies": {
+    "inngest-cli": "^1.13.7",
     "nodemon": "^3.1.10",
     "prisma": "^6.19.0"
   }

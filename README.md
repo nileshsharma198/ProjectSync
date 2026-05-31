@@ -15,7 +15,7 @@ https://projectsync-eight.vercel.app/
 
 ## Projects
 
-![Projects](./screenshots/projects.png)
+![Projects](./screenshots/project.png)
 
 ## Task Details
 
